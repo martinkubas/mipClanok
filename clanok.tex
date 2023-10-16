@@ -1,0 +1,102 @@
+% Metódy inžinierskej práce
+
+\documentclass[10pt,twoside,slovak,a4paper]{article}
+
+\usepackage[slovak]{babel}
+%\usepackage[T1]{fontenc}
+\usepackage[IL2]{fontenc} % lepšia sadzba písmena Ľ než v T1
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{url} % príkaz \url na formátovanie URL
+\usepackage{hyperref} % odkazy v texte budú aktívne (pri niektorých triedach dokumentov spôsobuje posun textu)
+
+\usepackage{cite}
+%\usepackage{times}
+
+\pagestyle{headings}
+
+\title{Vyhľadávanie najlepšieho ťahu v šachu\thanks{Semestrálny projekt v predmete Metódy inžinierskej práce, ak. rok 2023/24, vedenie: Vladimír Mlynarovič}} % meno a priezvisko vyučujúceho na cvičeniach
+
+\author{Martin Kubiš\\[2pt]
+	{\small Slovenská technická univerzita v Bratislave}\\
+	{\small Fakulta informatiky a informačných technológií}\\
+	{\small \texttt{xkubis@stuba.sk}}
+	}
+
+\date{\small 30. september 2023} % upravte
+
+
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Šach je strategická stolová hra, ktorá sa skladá z šachovnice o rozmeroch 8x8 a 6 typov figúriek vo dvoch farbách. Aj keď sa na prvý pohľad zdá ako jednoduchá hra, neprestáva trápiť mozgy hráčov jak začiatočníkov, tak profesionálov. Od 50. rokov 20 storočia, kedy sa vyvinul prvý šachový robot, sa vývoj nezastavil a počítače už sú na míle ďaleko pred ľudskými hráčmi. Cielom článku je priblíženie čitateľovi metódy a techniky šachových algoritmov, ich optimalizácia, takisto aj porovnanie medzi klasickými šachovými algoritmami a algoritmami obohatené o umelú inteligenciu a ako vyhľadávajú najefektívnejší možný ťah.
+\ldots
+\end{abstract}
+
+
+
+\section{Úvod}
+
+
+
+\section{Minimax algoritmus} \label{minimax}
+
+Základným problémom je teda\ldots{} Najprv sa pozrieme na nejaké vysvetlenie (časť~\ref{ina:nejake}), a potom na ešte nejaké (časť~\ref{ina:nejake}).\footnote{Niekedy môžete potrebovať aj poznámku pod čiarou.}
+
+Môže sa zdať, že problém vlastne nejestvuje\cite{Coplien:MPD}, ale bolo dokázané, že to tak nie je~\cite{Czarnecki:Staged, Czarnecki:Progress}. Napriek tomu, aj dnes na webe narazíme na všelijaké pochybné názory\cite{PLP-Framework}. Dôležité veci možno \emph{zdôrazniť kurzívou}.
+
+
+\subsection{Optimalizácie} \label{Optimalizacie}
+
+Niekedy treba uviesť zoznam:
+
+\begin{itemize}
+\item Alpha-Beta pruning
+\item Začiatočné pozície
+	\begin{itemize}
+	\item x
+	\item y
+	\end{itemize}
+\end{itemize}
+
+Ten istý zoznam, len číslovaný:
+
+\begin{enumerate}
+\item jedna vec
+\item druhá vec
+	\begin{enumerate}
+	\item x
+	\item y
+	\end{enumerate}
+\end{enumerate}
+
+`
+\section{Monte Carlo Tree Search} \label{MonteCarlo}
+
+\paragraph{Veľmi dôležitá poznámka.}
+Niekedy je potrebné nadpisom označiť odsek. Text pokračuje hneď za nadpisom.
+
+
+
+\section{DeepLearning, Neural networks} \label{DeepNeural}
+
+
+
+
+
+
+
+\section{Záver} \label{zaver} % prípadne iný variant názvu
+
+
+
+%\acknowledgement{Ak niekomu chcete poďakovať\ldots}
+
+
+% týmto sa generuje zoznam literatúry z obsahu súboru literatura.bib podľa toho, na čo sa v článku odkazujete
+\bibliography{literatura}
+\bibliographystyle{plain} % prípadne alpha, abbrv alebo hociktorý iný
+\end{document}
