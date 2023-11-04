@@ -39,41 +39,52 @@
 
 
 \section{Úvod}
+Šach je jednou z najstarších a najpopulárnejších hier, ktorá sa v priebehu storočí stala symbolom intelektu, stratégie a výzvy pre ľudský mozog. 
 
+Hranie šachu si vyžaduje veľa zručností, strategické myslenie, plánovanie určitých ťahov, schopnosť predvídať a dokonca byť nepredvídateľný. Aby sa hráči zlepšili, či už na profesionálnej alebo amatérskej úrovni, musia rozvíjať svoje zručnosti a znalosti o šachových algoritmoch a stratégiach, ktoré sú kľúčom k úspechu v tejto komplexnej hre.
+
+Tento článok sa zameria na šachové algoritmy, aké sú stratégie určené na zlepšenie schopností hráča, pochopenie hry a vyhladanie čo najlepších možných žahov na prekonanie súpera. Šachové algoritmy sú rozhodujúce pre šachové programy, ktoré sú čoraz výkonnejšie a každým dňom umožňujú posúvať hranice toho, čo sme si mysleli, že je možné v oblasti rýchlosti a presnosti ťahov.
+
+V tomto článku preskúmame históriu šachových algoritmov, pričom sa zameriame na najdôležitejšie algoritmy ako sú minimax algoritmus s alfa-beta pruningom, monte carlo tree search algoritmus, alebo využitie deep learningu, neurálnych sietí a umelej inteligencie a poukážeme na využitie týchto algoritmov v modernom šachovom svete. Ďalej sa budeme venovať technickým výzvam spojeným s vývojom šachových programov a ich schopnosťou hrať na úrovni šachových majstrov. 
+
+Nakoniec sa dotkneme etických a filozofických otázok spojených s používaním šachových algoritmov a umelej inteligencie vo svete šachu.
 
 
 \section{Minimax algoritmus} \label{minimax}
+Minimax algoritmus je rozhodovací algoritmus používaný v hrách na určenie najlepšieho možného ťahu pre hráča v hre pre dvoch hráčov s nulovým súčtom, ako je napríklad šach alebo piškôrky. V hre s nulovým súčtom sú zisky jedného hráča presne vyvážené stratami druhého hráča, takže súčet ziskov a strát hráčov je vždy nula. 
 
-Základným problémom je teda\ldots{} Najprv sa pozrieme na nejaké vysvetlenie (časť~\ref{ina:nejake}), a potom na ešte nejaké (časť~\ref{ina:nejake}).\footnote{Niekedy môžete potrebovať aj poznámku pod čiarou.}
+\subsection{Princíp fungovania Minimax algoritmu} \label{principMinimax}
+Minimax algoritmus funguje tak, že predpokladá, že obaja hráči budú hrať optimálne, a potom určí najlepší ťah pre hráča, ktorý práve robí ťah. 
+
+Robí to tak, že zvažuje všetky možné ťahy, ktoré by hráč mohol urobiť, a potom hodnotí každý z týchto ťahov simulovaním zvyšku hry za predpokladu, že súper urobí svoj najlepší možný ťah. Algoritmus potom vyberie ťah, ktorý vedie k najlepšiemu výsledku pre hráča, za predpokladu, že súper ako odpoveď urobí svoj najlepší možný ťah.
+
+
+\subsection{Výhody a obmedzenia Minimax algoritmu} \label {vyhodyMinimax}
+
+Minimax algoritmus je výkonný a teoretický prístup k rozhodovaniu o hrách, ktorý poskytuje optimálne riešenia v zmysle teórie hier. Tento algoritmus má však niekoľko obmedzení. Prvým je jeho výpočtová náročnosť, najmä v hrách s veľkým rozhodovacím priestorom. Preto boli vyvinuté rôzne varianty a optimalizácie, ako napríklad:
+\begin{itemize}
+\item Alpha-Beta pruning
+\item Otváracie ťahy (Openings)
+\end{itemize}
+Vďaka týmto optimalizáciam sa zníži počet vetví, cez ktoré musí algoritmus prejsť, taktiež sa vylepší celkový výkon algoritmu. 
+
 
 Môže sa zdať, že problém vlastne nejestvuje\cite{Coplien:MPD}, ale bolo dokázané, že to tak nie je~\cite{Czarnecki:Staged, Czarnecki:Progress}. Napriek tomu, aj dnes na webe narazíme na všelijaké pochybné názory\cite{PLP-Framework}. Dôležité veci možno \emph{zdôrazniť kurzívou}.
 
 
-\subsection{Optimalizácie} \label{Optimalizacie}
+\section{Alpha-Beta pruning} \label{alpha-beta}
+V praxi väčšina AI šachových robotov používa optimalizovanú verziu minimax algoritmu známeho ako alfa-beta pruning algoritmus. Základnou myšlienkou alfa-beta pruningu je zníženie počtu vetiev, ktoré je potrebné hodnotiť „prerezávaním“(pruningom) konárov, ktoré istotne nepovedú k lepšiemu výsledku ako tie, ktoré už boli hodnotené. 
 
-Niekedy treba uviesť zoznam:
+To sa dosiahne použitím dvoch hodnôt, alfa a beta, na sledovanie najlepšieho výsledku, ktorý bol doteraz zistený pre maximalizujúceho hráča (alfa) a najlepšieho výsledku, ktorý bol doteraz nájdený pre minimalizujúceho hráča (beta)
 
-\begin{itemize}
-\item Alpha-Beta pruning
-\item Začiatočné pozície
-	\begin{itemize}
-	\item x
-	\item y
-	\end{itemize}
-\end{itemize}
+\subsection{Princíp fungovania alpha-beta pruningu} \label{principAlpha-beta}
+Algoritmus funguje tak, že rekurzívne skúma strom hry a vyhodnocuje každý možný pohyb a výsledok pomocou algoritmu minimax. Pri skúmaní každej vetvy stromu aktualizuje hodnoty alfa a beta na základe najlepšieho výsledku, ktorý bol doteraz nájdený. 
 
-Ten istý zoznam, len číslovaný:
+Ak nájde vetvu, v ktorej je výsledok pre minimalizujúceho hráča (beta) horší ako aktuálny najlepší výsledok pre maximalizujúceho hráča (alfa), prereže túto vetvu a prestane ju vyhodnocovať, pretože minimalizujúci hráč by tento ťah nikdy nezvolil. 
 
-\begin{enumerate}
-\item jedna vec
-\item druhá vec
-	\begin{enumerate}
-	\item x
-	\item y
-	\end{enumerate}
-\end{enumerate}
+Algoritmus postupuje rekurzívne nahor po strome, pričom neustále aktualizuje hodnoty alfa a beta, kým nevyhodnotí všetky možné pohyby a výsledky, alebo kým neoreže všetky vetvy, ktoré sú zaručene horšie ako aktuálny najlepší výsledok.
 
-`
+
 \section{Monte Carlo Tree Search} \label{MonteCarlo}
 
 \paragraph{Veľmi dôležitá poznámka.}
