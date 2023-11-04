@@ -9,7 +9,8 @@
 \usepackage{graphicx}
 \usepackage{url} % príkaz \url na formátovanie URL
 \usepackage{hyperref} % odkazy v texte budú aktívne (pri niektorých triedach dokumentov spôsobuje posun textu)
-
+\usepackage{graphicx}
+\graphicspath{ {./obrazky/} }
 \usepackage{cite}
 %\usepackage{times}
 
@@ -53,11 +54,19 @@ Nakoniec sa dotkneme etických a filozofických otázok spojených s používan�
 \section{Minimax algoritmus} \label{minimax}
 Minimax algoritmus je rozhodovací algoritmus používaný v hrách na určenie najlepšieho možného ťahu pre hráča v hre pre dvoch hráčov s nulovým súčtom, ako je napríklad šach alebo piškôrky. V hre s nulovým súčtom sú zisky jedného hráča presne vyvážené stratami druhého hráča, takže súčet ziskov a strát hráčov je vždy nula. 
 
+
+
+
 \subsection{Princíp fungovania Minimax algoritmu} \label{principMinimax}
 Minimax algoritmus funguje tak, že predpokladá, že obaja hráči budú hrať optimálne, a potom určí najlepší ťah pre hráča, ktorý práve robí ťah. 
 
 Robí to tak, že zvažuje všetky možné ťahy, ktoré by hráč mohol urobiť, a potom hodnotí každý z týchto ťahov simulovaním zvyšku hry za predpokladu, že súper urobí svoj najlepší možný ťah. Algoritmus potom vyberie ťah, ktorý vedie k najlepšiemu výsledku pre hráča, za predpokladu, že súper ako odpoveď urobí svoj najlepší možný ťah.
-
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\textwidth]{minimax}
+    \caption{obr1: Jednoduchá ukážka minimax algoritmu}
+    \label{obr1}
+\end{figure}
 
 \subsection{Výhody a obmedzenia Minimax algoritmu} \label {vyhodyMinimax}
 
