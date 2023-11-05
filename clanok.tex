@@ -104,7 +104,7 @@ Algoritmus postupuje rekurzívne nahor po strome, pričom neustále aktualizuje 
 Monte Carlo Tree Search (MCTS) je inovatívny a výkonný algoritmus v oblasti umelej inteligencie a teórie hier, ktorý bol využitý na rôzne stolové hry, ako je napríklad Go a šach. Tento algoritmus výrazne prekonáva tradičné techniky vyhľadávania v stromovom priestore, čím umožňuje získať vysokokvalitné výsledky v hrách s veľkými rozhodovacími priestormi.
 
 \section{Princíp fungovania MCTS} \label{PrincipMTCS}
-MCTS sa líši od predchádzajúcich algoritmov Minimax tým, že neprehľadáva celý stromový priestor. Namiesto toho sa používa metóda vzorkovania, pri ktorej sa ťahy vyberajú a simulujú až do konca hry, aby sa získal odhad aktuálneho stavu hry. Opakuje tento proces niekoľkokrát a na základe získaných hodnôt sa rozhodne, ktorý ťah je najlepší. V MCTS existujú štyri základné fázy: výber, šírenie, simulácia a spätné šírenie.
+MCTS sa líši od predchádzajúcich algoritmov Minimax tým, že neprehľadáva celý stromový priestor. Namiesto toho sa používa metóda vzorkovania, pri ktorej sa ťahy vyberajú a simulujú až do konca hry, aby sa získal odhad aktuálneho stavu hry. Opakuje tento proces niekoľkokrát a na základe získaných hodnôt sa rozhodne, ktorý ťah je najlepší. V MCTS existujú štyri základné fázy:
 \begin{enumerate}
 	\item výber (Selection)
 	\item šírenie (Expansion)
@@ -116,7 +116,7 @@ MCTS sa líši od predchádzajúcich algoritmov Minimax tým, že neprehľadáva
     \centering
     \includegraphics[width=\textwidth]{MCTS}
     \caption{obr3: ukážka fungovania MCTS}
-    \label{obr2}
+    \label{obr3}
 \end{figure}
 \paragraph{Veľmi dôležitá poznámka.}
 Niekedy je potrebné nadpisom označiť odsek. Text pokračuje hneď za nadpisom.
@@ -125,12 +125,29 @@ Niekedy je potrebné nadpisom označiť odsek. Text pokračuje hneď za nadpisom
 
 \section{DeepLearning, Neural networks} \label{DeepNeural}
 
+DeepLearning a neurálne siete spôsobili revolúciu v spôsobe, akým počítače chápu a hrajú šach. AlphaZero, šachový program od DeepMind, využíva hlbokú neurónovú sieť na samo-učenie. Program dokázal poraziť špičkových ľudských hráčov a dosiahnuť úroveň podobnú šachovým lídrom.
+\subsection{Role neurálnyh sietí v šachových algoritmoch} \label{RoleAI}
+\begin{enumerate}
+	\item Vyhodnotenie pozície
 
+Neurónové siete možno trénovať na vyhodnotenie aktuálnej pozície v šachu. Toto hodnotenie možno použiť na výber najlepšieho ťahu a zlepšenie kvality rozhodovania na počítači.
+	\item Generovanie ťahov
 
+Neurónové siete možno použiť na generovanie a filtrovanie možných ťahov v hre. To urýchľuje výpočet a obmedzuje počet hľadaných mutácií.
+	\item Samo-učenie
 
+Neurónové siete môžu byť použité v počítačových šachových samoučiacich programoch. Napríklad AlphaZero nikdy pred tréningom nehral šach. Sieť sa poučila z každej hry a stala sa silnejším hráčom.
 
+\end{enumerate}
+\subsection {vyhody a vyzvy} \label{vyhodyAI}
+Použitie neurónových sietí v šachových algoritmoch má mnoho výhod, ako je zvýšenie výkonu a adaptability počítačových hráčov. Táto metóda však prináša aj mnohé výzvy, vrátane veľkého množstva údajov potrebných na školenie a zložitého procesu ladenia siete, aby fungovala optimálne.
 
+Šachové algoritmy majú veľa výhod s umelou inteligenciou, ako je vysoký výkon a kompatibilita s počítačovými hráčmi. Tento prístup však prináša niekoľko výziev, vrátane veľkého množstva údajov potrebných na školenie a ťažkostí pri online spolupráci pre optimálny výkon.
 
+\subsection{Buducnost ai} \label{buducnostAI}
+Stále sú niektoré nedokončené oblasti, ktoré je potrebné preskúmať na skúške s hlbokým učením a intelektuálnym prístupom. Okrem iného prebieha výskum, ako využiť siete na analýzu historických šachových hier a objavovanie nových modelov a metód. Budúcnosť hlbokého učenia môže byť v šachu veľmi zaujímavá a môže otvoriť nové cesty kognitívneho rozvoja.
+
+Na záver je zrejmé, že hlboké učenie a neurónové siete prinášajú revolúciu v skúšobných algoritmoch. Táto kombinácia robí rozdiel v schopnosti počítača hrať šach, analyzovať historické hry a objavovať nové technológie. Uvidíme ďalší vývoj v tejto oblasti a očakávame, že hlboké učenie bude hrať dôležitú úlohu pri zlepšovaní nášho chápania šachu a psychológie vo všeobecnosti.
 \section{Záver} \label{zaver} % prípadne iný variant názvu
 
 
