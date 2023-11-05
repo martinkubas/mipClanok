@@ -42,23 +42,20 @@
 \section{Úvod}
 Šach je jednou z najstarších a najpopulárnejších hier, ktorá sa v priebehu storočí stala symbolom intelektu, stratégie a výzvy pre ľudský mozog. 
 
-Hranie šachu si vyžaduje veľa zručností, strategické myslenie, plánovanie určitých ťahov, schopnosť predvídať a dokonca byť nepredvídateľný. Aby sa hráči zlepšili, či už na profesionálnej alebo amatérskej úrovni, musia rozvíjať svoje zručnosti a znalosti o šachových algoritmoch a stratégiach, ktoré sú kľúčom k úspechu v tejto komplexnej hre.
+Hranie šachu si vyžaduje veľa zručností, strategické myslenie, plánovanie určitých ťahov, schopnosť predvídať a  byť nepredvídateľný. Aby sa hráči zlepšili, či už na profesionálnej alebo amatérskej úrovni, musia rozvíjať svoje zručnosti a znalosti o šachových algoritmoch a stratégiach, ktoré sú kľúčom k úspechu v tejto komplexnej hre.
 
-Tento článok sa zameria na šachové algoritmy, aké sú stratégie určené na zlepšenie schopností hráča, pochopenie hry a vyhladanie čo najlepších možných žahov na prekonanie súpera. Šachové algoritmy sú rozhodujúce pre šachové programy, ktoré sú čoraz výkonnejšie a každým dňom umožňujú posúvať hranice toho, čo sme si mysleli, že je možné v oblasti rýchlosti a presnosti ťahov.
+Tento článok sa zameria na šachové algoritmy, aké sú stratégie na pochopenie hry a vyhladanie čo najlepších možných žahov na prekonanie súpera. Šachové algoritmy sú rozhodujúce pre šachové programy, ktoré sú čoraz výkonnejšie a každým dňom umožňujú posúvať hranice toho, čo sme si mysleli, že je možné v oblasti rýchlosti a presnosti ťahov.
 
-V tomto článku preskúmame históriu šachových algoritmov, pričom sa zameriame na najdôležitejšie algoritmy ako sú minimax algoritmus s alfa-beta pruningom, monte carlo tree search algoritmus, alebo využitie deep learningu, neurálnych sietí a umelej inteligencie a poukážeme na využitie týchto algoritmov v modernom šachovom svete. Ďalej sa budeme venovať technickým výzvam spojeným s vývojom šachových programov a ich schopnosťou hrať na úrovni šachových majstrov. 
-
-Nakoniec sa dotkneme etických a filozofických otázok spojených s používaním šachových algoritmov a umelej inteligencie vo svete šachu.
+V tomto článku sa zameriame na najdôležitejšie algoritmy ako sú minimax algoritmus s alfa-beta pruningom, monte carlo tree search algoritmus, alebo využitie deep learningu, neurálnych sietí a umelej inteligencie a poukážeme na využitie týchto algoritmov v modernom šachovom svete. Ďalej sa budeme venovať technickým výzvam spojeným s vývojom šachových programov a ich schopnosťou hrať na úrovni šachových majstrov. 
 
 
 \section{Minimax algoritmus} \label{minimax}
-Minimax algoritmus je rozhodovací algoritmus používaný v hrách na určenie najlepšieho možného ťahu pre hráča v hre pre dvoch hráčov s nulovým súčtom, ako je napríklad šach alebo piškôrky. V hre s nulovým súčtom sú zisky jedného hráča presne vyvážené stratami druhého hráča, takže súčet ziskov a strát hráčov je vždy nula. 
+Minimax algoritmus je rozhodovací algoritmus používaný v hrách na určenie najlepšieho možného ťahu pre hráča v hre pre dvoch hráčov s nulovým súčtom, ako je napríklad šach alebo piškôrky. 
 
-
-
+V hre s nulovým súčtom sú zisky jedného hráča presne vyvážené stratami druhého hráča, takže súčet ziskov a strát hráčov je vždy nula. 
 
 \subsection{Princíp fungovania Minimax algoritmu} \label{principMinimax}
-Minimax algoritmus funguje tak, že predpokladá, že obaja hráči budú hrať optimálne, a potom určí najlepší ťah pre hráča, ktorý práve robí ťah. 
+Minimax algoritmus funguje tak, že predpokladá, že obaja hráči budú hrať optimálne, a potom určí najlepší ťah pre hráča, ktorý práve robí ťah. Hráč 1 sa snaží žískať, čo \textbf{najväčší} počet bodov, zatial čo hráč 2 sa snaží získať čo \textbf{najmenší} počet bodov.
 
 Robí to tak, že zvažuje všetky možné ťahy, ktoré by hráč mohol urobiť, a potom hodnotí každý z týchto ťahov simulovaním zvyšku hry za predpokladu, že súper urobí svoj najlepší možný ťah. Algoritmus potom vyberie ťah, ktorý vedie k najlepšiemu výsledku pre hráča, za predpokladu, že súper ako odpoveď urobí svoj najlepší možný ťah.
 \begin{figure}[h]
@@ -70,7 +67,7 @@ Robí to tak, že zvažuje všetky možné ťahy, ktoré by hráč mohol urobiť
 
 \subsection{Výhody a obmedzenia Minimax algoritmu} \label {vyhodyMinimax}
 
-Minimax algoritmus je výkonný a teoretický prístup k rozhodovaniu o hrách, ktorý poskytuje optimálne riešenia v zmysle teórie hier. Tento algoritmus má však niekoľko obmedzení. Prvým je jeho výpočtová náročnosť, najmä v hrách s veľkým rozhodovacím priestorom. Preto boli vyvinuté rôzne varianty a optimalizácie, ako napríklad:
+Minimax algoritmus je výkonný prístup k rozhodovaniu o hrách, ktorý poskytuje optimálne riešenia v zmysle teórie hier. Tento algoritmus má však niekoľko obmedzení. Prvým je jeho výpočtová náročnosť, najmä v hrách s veľkým rozhodovacím priestorom. Preto boli vyvinuté rôzne varianty a optimalizácie, ako napríklad:
 \begin{itemize}
 \item Alpha-Beta pruning
 \item Otváracie ťahy (Openings)
@@ -103,7 +100,7 @@ Algoritmus postupuje rekurzívne nahor po strome, pričom neustále aktualizuje 
 \section{Monte Carlo Tree Search} \label{MonteCarlo}
 Monte Carlo Tree Search (MCTS) je inovatívny a výkonný algoritmus v oblasti umelej inteligencie a teórie hier, ktorý bol využitý na rôzne stolové hry, ako je napríklad Go a šach. Tento algoritmus výrazne prekonáva tradičné techniky vyhľadávania v stromovom priestore, čím umožňuje získať vysokokvalitné výsledky v hrách s veľkými rozhodovacími priestormi.
 
-\section{Princíp fungovania MCTS} \label{PrincipMTCS}
+\subsection{Princíp fungovania MCTS} \label{PrincipMTCS}
 MCTS sa líši od predchádzajúcich algoritmov Minimax tým, že neprehľadáva celý stromový priestor. Namiesto toho sa používa metóda vzorkovania, pri ktorej sa ťahy vyberajú a simulujú až do konca hry, aby sa získal odhad aktuálneho stavu hry. Opakuje tento proces niekoľkokrát a na základe získaných hodnôt sa rozhodne, ktorý ťah je najlepší. V MCTS existujú štyri základné fázy:
 \begin{enumerate}
 	\item výber (Selection)
@@ -118,36 +115,35 @@ MCTS sa líši od predchádzajúcich algoritmov Minimax tým, že neprehľadáva
     \caption{obr3: ukážka fungovania MCTS}
     \label{obr3}
 \end{figure}
-\paragraph{Veľmi dôležitá poznámka.}
-Niekedy je potrebné nadpisom označiť odsek. Text pokračuje hneď za nadpisom.
 
 
+\section{Umelá inteligencia a šachy} \label{AI}
 
-\section{DeepLearning, Neural networks} \label{DeepNeural}
+Význam umelej inteligencie pri hraní šachu je obrovský. Moderné šachové programy sú schopné hrať na úrovni a dokonca aj porážať majstrov sveta v šachu a stali sa cenným nástrojom pre hráčov všetkých úrovní. 
 
-DeepLearning a neurálne siete spôsobili revolúciu v spôsobe, akým počítače chápu a hrajú šach. AlphaZero, šachový program od DeepMind, využíva hlbokú neurónovú sieť na samo-učenie. Program dokázal poraziť špičkových ľudských hráčov a dosiahnuť úroveň podobnú šachovým lídrom.
-\subsection{Role neurálnyh sietí v šachových algoritmoch} \label{RoleAI}
+Umelá inteligencia umožňuje hráčom analyzovať svoje hry, trénovať, zlepšovať sa a objavovať nové stratégie. Vývoj v tejto oblasti pokračuje a umelá inteligencia bude hrať v budúcnosti šachu čoraz dôležitejšiu úlohu.
+\subsection{Alpha zero} \label{alphaZeroAI}
+
+Zlomovým bodom pre AI bolo predstavenie programu AlphaZero od DeepMind v roku 2017. AlphaZero využíva kombináciu Deep Learningu a MCTS na samoučenie hier. Program porazil najlepšie šachové programy na svete a dosiahol skvelé výsledky.
+
+AlphaZero prináša nový pohľad na tréning umelej inteligencie, pretože sa učí šach bez ľudského tréningu alebo heuristiky, pričom dosahuje predtým nepredstaviteľnej úrovne. To znamená, že program sa neučil z predrom definovaných pravidiel, alebo ľudských stratégii, ale spoliehal sa na strojové učenie a analýzu veľkého množstva dát, ktoré sám generoval pri hraní šachu.
+
+\subsection{význam AI v šachu} \label{RoleAI}
+Umelá inteligencia prináša radu významých prínosov do sveta šachu
 \begin{enumerate}
-	\item Vyhodnotenie pozície
+	\item výkon a sila
 
-Neurónové siete možno trénovať na vyhodnotenie aktuálnej pozície v šachu. Toto hodnotenie možno použiť na výber najlepšieho ťahu a zlepšenie kvality rozhodovania na počítači.
-	\item Generovanie ťahov
-
-Neurónové siete možno použiť na generovanie a filtrovanie možných ťahov v hre. To urýchľuje výpočet a obmedzuje počet hľadaných mutácií.
+AI umožnuje vytvárať šachové programy, ktoré sú o dosť výkonnejšie, ako najlepší ludkskí hráči
 	\item Samo-učenie
 
-Neurónové siete môžu byť použité v počítačových šachových samoučiacich programoch. Napríklad AlphaZero nikdy pred tréningom nehral šach. Sieť sa poučila z každej hry a stala sa silnejším hráčom.
+Pomocou AI sa šachové programy vedia učiť samé, čo znamená, že niesú obmedzené ľudskými znalosťami alebo stratégiami. Napr. program AlphaZero, ako bolo už vyššie spomenuté.
+
+	\item Analýza a tréning
+
+Umelá inteligencia je už dnes bežne využívaná hráčmi na analýzu svojich hier, a na tréning. Šachové programy poháňané umelou inteligenciou sú skvelými učitelmi pre hráčov všetkých úrovní, keďže sa dokážu prispôsobovať svojim protivníkom.
 
 \end{enumerate}
-\subsection {vyhody a vyzvy} \label{vyhodyAI}
-Použitie neurónových sietí v šachových algoritmoch má mnoho výhod, ako je zvýšenie výkonu a adaptability počítačových hráčov. Táto metóda však prináša aj mnohé výzvy, vrátane veľkého množstva údajov potrebných na školenie a zložitého procesu ladenia siete, aby fungovala optimálne.
 
-Šachové algoritmy majú veľa výhod s umelou inteligenciou, ako je vysoký výkon a kompatibilita s počítačovými hráčmi. Tento prístup však prináša niekoľko výziev, vrátane veľkého množstva údajov potrebných na školenie a ťažkostí pri online spolupráci pre optimálny výkon.
-
-\subsection{Buducnost ai} \label{buducnostAI}
-Stále sú niektoré nedokončené oblasti, ktoré je potrebné preskúmať na skúške s hlbokým učením a intelektuálnym prístupom. Okrem iného prebieha výskum, ako využiť siete na analýzu historických šachových hier a objavovanie nových modelov a metód. Budúcnosť hlbokého učenia môže byť v šachu veľmi zaujímavá a môže otvoriť nové cesty kognitívneho rozvoja.
-
-Na záver je zrejmé, že hlboké učenie a neurónové siete prinášajú revolúciu v skúšobných algoritmoch. Táto kombinácia robí rozdiel v schopnosti počítača hrať šach, analyzovať historické hry a objavovať nové technológie. Uvidíme ďalší vývoj v tejto oblasti a očakávame, že hlboké učenie bude hrať dôležitú úlohu pri zlepšovaní nášho chápania šachu a psychológie vo všeobecnosti.
 \section{Záver} \label{zaver} % prípadne iný variant názvu
 
 
