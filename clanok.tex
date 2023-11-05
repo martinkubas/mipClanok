@@ -92,10 +92,32 @@ Algoritmus funguje tak, že rekurzívne skúma strom hry a vyhodnocuje každý m
 Ak nájde vetvu, v ktorej je výsledok pre minimalizujúceho hráča (beta) horší ako aktuálny najlepší výsledok pre maximalizujúceho hráča (alfa), prereže túto vetvu a prestane ju vyhodnocovať, pretože minimalizujúci hráč by tento ťah nikdy nezvolil. 
 
 Algoritmus postupuje rekurzívne nahor po strome, pričom neustále aktualizuje hodnoty alfa a beta, kým nevyhodnotí všetky možné pohyby a výsledky, alebo kým neoreže všetky vetvy, ktoré sú zaručene horšie ako aktuálny najlepší výsledok.
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\textwidth]{alpha-beta}
+    \caption{obr2: ukážka alpha-beta pruningu}
+    \label{obr2}
+\end{figure}
 
 
 \section{Monte Carlo Tree Search} \label{MonteCarlo}
+Monte Carlo Tree Search (MCTS) je inovatívny a výkonný algoritmus v oblasti umelej inteligencie a teórie hier, ktorý bol využitý na rôzne stolové hry, ako je napríklad Go a šach. Tento algoritmus výrazne prekonáva tradičné techniky vyhľadávania v stromovom priestore, čím umožňuje získať vysokokvalitné výsledky v hrách s veľkými rozhodovacími priestormi.
 
+\section{Princíp fungovania MCTS} \label{PrincipMTCS}
+MCTS sa líši od predchádzajúcich algoritmov Minimax tým, že neprehľadáva celý stromový priestor. Namiesto toho sa používa metóda vzorkovania, pri ktorej sa ťahy vyberajú a simulujú až do konca hry, aby sa získal odhad aktuálneho stavu hry. Opakuje tento proces niekoľkokrát a na základe získaných hodnôt sa rozhodne, ktorý ťah je najlepší. V MCTS existujú štyri základné fázy: výber, šírenie, simulácia a spätné šírenie.
+\begin{enumerate}
+	\item výber (Selection)
+	\item šírenie (Expansion)
+	\item simulácia (Simulation)
+	\item spätné šírenie (Backpropagation)
+\end{enumerate}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\textwidth]{MCTS}
+    \caption{obr3: ukážka fungovania MCTS}
+    \label{obr2}
+\end{figure}
 \paragraph{Veľmi dôležitá poznámka.}
 Niekedy je potrebné nadpisom označiť odsek. Text pokračuje hneď za nadpisom.
 
